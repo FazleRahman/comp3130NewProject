@@ -84,3 +84,9 @@ Improved habit cards with category icons and formatted dates.
 
 **Why:**
 This makes the UI more informative and visually appealing, matching the workshop's progression for better UX.
+
+### Update 2.3: [Week 6, Task 3]
+(Already completed in Week 5, Task 6)
+- Added AppBar titled "HabitFlow"
+- Included + IconButton that opens the New Habit modal
+- This was done when implementing the add habit functionality.

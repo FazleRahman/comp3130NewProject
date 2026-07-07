@@ -19,6 +19,7 @@ class _NewHabitState extends State<NewHabit> {
   DateTime? _selectedDate;
 
   HabitFrequency _selectedFrequency = HabitFrequency.daily;
+  HabitCategory _selectedCategory = HabitCategory.other;
 
   void _submitHabit() {
     if (_nameController.text.trim().isEmpty) {
@@ -130,6 +131,25 @@ class _NewHabitState extends State<NewHabit> {
               }
             },
           ),
+          const SizedBox(height: 16),
+            DropdownButtonFormField<HabitCategory>(
+              value: _selectedCategory,
+              decoration: const InputDecoration(
+                labelText: 'Category',
+                border: OutlineInputBorder(),
+              ),
+              items: HabitCategory.values.map((cat) {
+                return DropdownMenuItem(
+                  value: cat,
+                  child: Text(cat.toString().split('.').last.toUpperCase()),
+                );
+              }).toList(),
+              onChanged: (value) {
+                if (value != null) {
+                  setState(() => _selectedCategory = value);
+                }
+              },
+            ),
           const SizedBox(height: 24),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,

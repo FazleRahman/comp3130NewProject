@@ -186,3 +186,11 @@ Fixed HabitList call with onRemoveHabit callback + Dismissible support.
 - Enabled swipe-to-delete with SnackBar
 
 **Why:** Completes the delete functionality without errors.
+
+### Update 3.5: [Week 7, Task 6 and 7]
+Put in theme and Styled the application & Added full Light + Dark theme support.
+- Defined `lightTheme` and `darkTheme` in `MyApp`
+- Used `ThemeMode.system` for auto switch
+- Improved CardTheme for better alignment
+
+**Why:** Matches workshop theming requirements and improves UX.

@@ -66,6 +66,7 @@ Moving from basic text display to nice cards. It makes the app look more profess
 Added New Habit modal.
 - Created `new_habit.dart` with form (TextField + Dropdown for frequency)
 - Connected modal to + button
+- Under addhabit, made it so that users can input name, daily/weekly frequency, then add it or cancel
 - Added `_addHabit` method to state
 
 **Why:**

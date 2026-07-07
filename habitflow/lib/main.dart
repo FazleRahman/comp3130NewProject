@@ -19,14 +19,14 @@ void main() async {
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
-
+  
   @override
   State<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
   bool _isDarkMode = false;
-
+  
   void _toggleTheme() {
     setState(() {
       _isDarkMode = !_isDarkMode;

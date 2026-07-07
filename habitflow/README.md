@@ -296,3 +296,14 @@ Mistakenly removed theme toggle button, had to bring it back again (repeated pre
 dependencies didn't match up, had to search them all separately and add them again.
 
 ### And I removed the floating button for 'add habit' icon, and put it on the bottom left like it generally comes with flutter because that looked better. 
+
+### Update 6.4: [Week 10]
+Fixing up Test files
+- Updated tests (`widget_test.dart` and `login_test.dart`) with mocks
+
+**Why:** Completes secure user authentication flow and ensures tests pass.
+
+### Issues Encountered & Solutions
+- Test failures due to Firebase not initialized in test env → Used `setUpAll` and mock packages (`firebase_auth_mocks`)
+- Widget tree not finding "HabitFlow" → Added `pumpAndSettle` and robust finders
+- Navigation after login → Used `pushReplacement`

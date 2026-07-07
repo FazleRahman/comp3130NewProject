@@ -184,3 +184,10 @@ __________________________________X_______________________________
 
 ### Update 3.1: [Week 7, Task 1]
 This task has already been completed as the advanced task for previous week {week 6, advanced tasks}
+
+### Update 3.2: [Week 7, Task 2]
+Changed the text to upper case in the dropdown & display chosen category.
+- Updated `onChanged` to print selected category in uppercase
+- Ensured state updates correctly on selection
+
+**Why:** Matches workshop requirement to see chosen value and handle state change.

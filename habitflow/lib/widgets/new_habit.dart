@@ -146,7 +146,11 @@ class _NewHabitState extends State<NewHabit> {
               }).toList(),
               onChanged: (value) {
                 if (value != null) {
-                  setState(() => _selectedCategory = value);
+                  setState(() {
+                    _selectedCategory = value;
+                    print('Selected Category: ${value.toString().split('.').last.toUpperCase()}');
+                  }
+                  );
                 }
               },
             ),

@@ -95,3 +95,12 @@ __________________________________X_______________________________
 
 ### Update 2.1: [Week 6, Task 1]
 This task has already been completed as the last task for previous week. 
+
+### Update 2.2: [Week 6, Task 2]
+Improved habit cards with category icons and formatted dates.
+- Added `formattedCreatedDate` getter and `icon` to Habit model
+- Updated HabitList to display icons and better formatting
+- Installed `intl` package for date formatting
+
+**Why:**
+This makes the UI more informative and visually appealing, matching the workshop's progression for better UX.

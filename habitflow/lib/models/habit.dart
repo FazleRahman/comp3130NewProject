@@ -1,8 +1,12 @@
 import 'package:uuid/uuid.dart';
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 const _uuid = Uuid();
 
 enum HabitFrequency { daily, weekly }
+
+final formatter = DateFormat('dd-MM-yyyy');
 
 class Habit {
   final String id;
@@ -19,6 +23,17 @@ class Habit {
   })  : id = _uuid.v4(),
         createdAt = createdAt ?? DateTime.now(),
         completedDates = completedDates ?? [];
+
+  String get formattedCreatedAt => formatter.format(createdAt);
+
+  IconData get icon{
+    switch (frequency) {
+      case HabitFrequency.daily:
+        return Icons.calendar_today;
+      case HabitFrequency.weekly:
+        return Icons.calendar_view_week;
+    }
+  }
 
   // Helper method to mark habit as done today
   Habit markCompletedToday() {

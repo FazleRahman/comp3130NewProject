@@ -59,13 +59,18 @@ class _MyAppState extends State<MyApp> {
 
 class AuthWrapper extends StatelessWidget {
   final VoidCallback toggleTheme;
+  final Stream<User?>? authStateChanges;
 
-  const AuthWrapper({super.key, required this.toggleTheme});
+  const AuthWrapper({
+    super.key,
+    required this.toggleTheme,
+    this.authStateChanges,
+  });
 
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<User?>(
-      stream: FirebaseAuth.instance.authStateChanges(),
+      stream: authStateChanges ?? FirebaseAuth.instance.authStateChanges(),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           return HabitsHome(toggleTheme: toggleTheme);

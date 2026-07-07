@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:provider/provider.dart';
 import 'package:habitflow/main.dart';
 import 'package:habitflow/providers/habit_provider.dart';
@@ -13,7 +14,12 @@ void main() {
     await tester.pumpWidget(
       ChangeNotifierProvider(
         create: (_) => HabitProvider(),
-        child: const MyApp(),
+        child: MaterialApp(
+          home: AuthWrapper(
+            toggleTheme: () {},
+            authStateChanges: Stream<User?>.value(null),
+          ),
+        ),
       ),
     );
 

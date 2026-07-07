@@ -323,3 +323,12 @@ GitHub Actions CI for Flutter + Firebase
 **Issues & Solutions:**
 - Firebase config in CI → Used `flutterfire configure` with secrets
 - Secrets management → Followed workshop notes for `FIREBASE_TOKEN`
+
+### Update 7.8
+there are issues in the base test files.
+- Updated main.dart
+    - AuthWrapper now accepts authStateChanges as an injectable parameter.
+    - Defaults to FirebaseAuth.instance.authStateChanges() in production.
+- Updated widget_test.dart
+    - Now injects Stream<User?>.value(null) into AuthWrapper.
+    - This avoids Firebase auth initialization during widget tests.

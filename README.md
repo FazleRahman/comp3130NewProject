@@ -100,3 +100,12 @@ Extended New Habit modal with proper form fields.
 
 **Why:**
 This makes the modal functional and user-friendly, following the workshop pattern of building a proper input form before adding more complex features.
+
+### Update 2.5: [Week 6, Task 5]
+Added amount input field to New Habit modal.
+- Added TextEditingController for amount
+- Added TextField with $ prefix and number keyboard
+- Updated dispose() method
+
+**Why:**
+This allows users to set target values for habits (optional for now), following the workshop pattern for better input UX.

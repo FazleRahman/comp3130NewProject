@@ -246,3 +246,12 @@ _______________________________X__________________________________
 - Tested full flow: add, mark done, delete
 
 **Why:** Improves UX as per workshop suggestions.
+
+_______________________________X__________________________________
+
+### Update 5.1: [Week 9, Widget Tests]
+Updated widget_test.dart to test main app with Provider.
+- Wrapped test with ChangeNotifierProvider
+- Basic smoke test for app launch
+
+**Why:** Follows workshop pattern for widget testing.

@@ -159,3 +159,8 @@ This will however not print the value of the date when selected, edited code to 
 - Full integration and testing
 
 **Why:** Makes habits more organized.
+
+__________________________________X_______________________________
+
+### Update 3.1: [Week 7, Task 1]
+This task has already been completed as the advanced task for previous week {week 6, advanced tasks}

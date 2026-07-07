@@ -130,7 +130,7 @@ Added amount input field to New Habit modal.
 **Why:**
 This allows users to set target values for habits (optional for now), following the workshop pattern for better input UX.
 
-### update 2.6: [Week 6, task 5 rework]
+### Update 2.6: [Week 6, task 5 rework]
 After completing it, I went in to check the application, and realized that the amount field has no use in my application. I was so in tune that I just continued with the tasks and put in amount field with '$'. Now i am planning on changing it up to a Target count field, example: amount of glasses drank throughout the day, or minutes spent exercising.
 - Renamed field from "Amount" to "Target Count"
 - Removed $ prefix (more suitable for habits)
@@ -138,3 +138,6 @@ After completing it, I went in to check the application, and realized that the a
 
 **Why:**
 This allows users to set measurable goals, making the app more useful for quantifiable habits.
+
+## Update 2.7: [Week 6, task 6]
+Adding cancel button was already done in the previous week {Update 1.6}.

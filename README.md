@@ -118,3 +118,6 @@ After completing it, I went in to check the application, and realized that the a
 
 **Why:**
 This allows users to set measurable goals, making the app more useful for quantifiable habits.
+
+## Update 2.7: [Week 6, task 6]
+Adding cancel button was already done in the previous week {Update 1.6}.

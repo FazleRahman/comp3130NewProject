@@ -27,8 +27,7 @@ jobs:
         working-directory: ./habitflow
         run: |
           flutter pub global activate flutterfire_cli
-          flutterfire configure --project=$FIREBASE_PROJECT_ID --token=$FIREBASE_TOKEN --platforms=android --yes
-
+          echo "y" | flutterfire configure --project=$FIREBASE_PROJECT_ID --token=$FIREBASE_TOKEN --platforms=android --yes
       - name: Build APK
         working-directory: ./habitflow
         run: flutter build apk --release

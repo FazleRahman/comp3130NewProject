@@ -131,3 +131,12 @@ Added the date picker Widget next to the Target Count field in the New Habit mod
 
 **Why:**  
 This provides intuitive UX for associating a date with new habits (e.g., start date or target deadline). Using `Expanded` + `IconButton` (instead of another TextField) avoids layout crashes and follows best practices shown in the screenshots/workshop.
+
+### Update 2.9: [Week 6, Task 8]
+Coded the showDatePicker in a custom function to enable the DatePicker and linked the Icon Button onPressed.
+- Enhanced `_openDatePicker()` with `helpText`, better `lastDate` (allows future), and robust async handling.
+- Confirmed IconButton `onPressed: _openDatePicker` linkage.
+- Added user-friendly tooltip and date formatting.
+
+**Why:**  
+This follows the workshop instruction exactly (custom function for reusability and clarity). Makes date selection reliable and polished.

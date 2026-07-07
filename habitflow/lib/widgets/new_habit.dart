@@ -41,12 +41,14 @@ class _NewHabitState extends State<NewHabit> {
     super.dispose();
   }
 
+  // === TASK 8: Custom showDatePicker Function ===
   void _openDatePicker() async {
     final pickedDate = await showDatePicker(
       context: context,
       initialDate: _selectedDate ?? DateTime.now(),
       firstDate: DateTime(2020),
-      lastDate: DateTime.now(),
+      lastDate: DateTime.now().add(const Duration(days: 365)), // Allow future dates
+      helpText: 'Select Habit Start / Target Date',
     );
 
     if (pickedDate != null) {
@@ -55,6 +57,7 @@ class _NewHabitState extends State<NewHabit> {
       });
     }
   }
+  // === END TASK 8 ===
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +85,6 @@ class _NewHabitState extends State<NewHabit> {
             textCapitalization: TextCapitalization.sentences,
           ),
           const SizedBox(height: 16),
-          // === TASK 7 CHANGES START HERE ===
           Row(
             children: [
               Expanded(
@@ -99,7 +101,7 @@ class _NewHabitState extends State<NewHabit> {
               const SizedBox(width: 8),
               IconButton(
                 icon: const Icon(Icons.calendar_today),
-                onPressed: _openDatePicker,
+                onPressed: _openDatePicker,   // Linked here
                 tooltip: 'Pick Date',
               ),
             ],
@@ -110,7 +112,6 @@ class _NewHabitState extends State<NewHabit> {
               'Selected Date: ${formatter.format(_selectedDate!)}',
               style: const TextStyle(fontWeight: FontWeight.bold),
             ),
-          // === TASK 7 CHANGES END HERE ===
           const SizedBox(height: 16),
           DropdownButtonFormField<HabitFrequency>(
             value: _selectedFrequency,

@@ -23,12 +23,26 @@ class _NewHabitState extends State<NewHabit> {
 
   void _submitHabit() {
     if (_nameController.text.trim().isEmpty) {
+      showDialog(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          title: const Text('Invalid Input'),
+          content: const Text('Please enter a habit name.'),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(ctx),
+              child: const Text('Okay'),
+            ),
+          ],
+        ),
+      );
       return;
     }
 
     final newHabit = Habit(
       name: _nameController.text.trim(),
       frequency: _selectedFrequency,
+      category: _selectedCategory,
       createdAt: _selectedDate,
     );
 

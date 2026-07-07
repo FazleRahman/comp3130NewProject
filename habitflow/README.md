@@ -191,3 +191,10 @@ Changed the text to upper case in the dropdown & display chosen category.
 - Ensured state updates correctly on selection
 
 **Why:** Matches workshop requirement to see chosen value and handle state change.
+
+### Update 3.3: [Week 7, Task 3]
+Added error handling for empty text entry using AlertDialog.
+- Enhanced `_submitHabit()` with validation + dialog
+- Prevents saving without name
+
+**Why:** Improves UX and matches workshop sample for invalid input handling.

@@ -72,3 +72,6 @@ Added New Habit modal.
 **Why:**
 This allows users to add habits dynamically, following the same pattern as the "Add Expense" modal in the Travel Expenses workshop.
 __________________________________X_______________________________
+
+### Update 2.1: [Week 6, Task 1]
+This task has already been completed as the last task for previous week. 

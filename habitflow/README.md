@@ -40,8 +40,17 @@ outcome: The barebone project is running okay
 
 ## update 1.1 : [Week 5, task 1]
 Updated lib/main.dart to getting started on the project. 
-- I implemented the stateful `HabitsHome` widget 
+- Implemented the stateful `HabitsHome` widget 
 - Replaced the default counter app with a clean `MaterialApp`
 - Created a stateful widget called `HabitsHome` as the home screen
 - Added a basic Scaffold with AppBar titled "HabitFlow"
 - Added placeholder text in the body to represent future habit list
+
+### Update 1.2: [Week 5, Task 2]
+Added `uuid` dependency to `pubspec.yaml` and completed the `Habit` model.
+- Added `uuid: ^4.5.3` to pubspec.yaml
+- Ran `flutter pub get`
+- Created full `Habit` model with ID generation, frequency enum, and `markCompletedToday()` helper method
+
+**Why:**
+UUID ensures each habit has a unique identifier (important for deletion and state management later). The model is designed to support streak tracking and completion history from the beginning.

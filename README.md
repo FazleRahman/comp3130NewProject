@@ -10,3 +10,18 @@ This is an application that users use to track their habits, like adding daily o
 
 ### This application will be made in commits in the similar but proper way to the workshops.
 
+[
+### This application will be made in commits in the similar but proper way to the workshops.
+]
+
+## weekly Update 1 : [week 4]
+got started on the project. Initialized the flutter project, and made sure the current dependencies are running properly and the bare bone project runs properly. 
+outcome: The barebone project is running okay
+
+## update 1.1 : [Week 5, task 1]
+Updated lib/main.dart to getting started on the project. 
+- I implemented the stateful `HabitsHome` widget 
+- Replaced the default counter app with a clean `MaterialApp`
+- Created a stateful widget called `HabitsHome` as the home screen
+- Added a basic Scaffold with AppBar titled "HabitFlow"
+- Added placeholder text in the body to represent future habit list

@@ -121,3 +121,13 @@ This allows users to set measurable goals, making the app more useful for quanti
 
 ## Update 2.7: [Week 6, task 6]
 Adding cancel button was already done in the previous week {Update 1.6}.
+
+### Update 2.8: [Week 6, Task 7]
+Added the date picker Widget next to the Target Count field in the New Habit modal.
+- Wrapped Target Count TextField in `Expanded` inside a `Row` to fix "Row doesn’t constrain its children’s width" / unbounded width exception.
+- Added `IconButton` with `Icons.calendar_today` for the date picker.
+- Added live display of selected date below the row using formatted output.
+- Added `intl` import and formatter for clean date display.
+
+**Why:**  
+This provides intuitive UX for associating a date with new habits (e.g., start date or target deadline). Using `Expanded` + `IconButton` (instead of another TextField) avoids layout crashes and follows best practices shown in the screenshots/workshop.

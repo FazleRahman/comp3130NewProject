@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import '../models/habit.dart';
+
+final formatter = DateFormat('dd-MM-yyyy');
 
 class NewHabit extends StatefulWidget {
   final void Function(Habit habit) onSaveHabit;
@@ -13,6 +16,7 @@ class NewHabit extends StatefulWidget {
 class _NewHabitState extends State<NewHabit> {
   final _nameController = TextEditingController();
   final _amountController = TextEditingController();
+  DateTime? _selectedDate;
 
   HabitFrequency _selectedFrequency = HabitFrequency.daily;
 
@@ -35,6 +39,21 @@ class _NewHabitState extends State<NewHabit> {
     _nameController.dispose();
     _amountController.dispose();
     super.dispose();
+  }
+
+  void _openDatePicker() async {
+    final pickedDate = await showDatePicker(
+      context: context,
+      initialDate: _selectedDate ?? DateTime.now(),
+      firstDate: DateTime(2020),
+      lastDate: DateTime.now(),
+    );
+
+    if (pickedDate != null) {
+      setState(() {
+        _selectedDate = pickedDate;
+      });
+    }
   }
 
   @override
@@ -63,15 +82,35 @@ class _NewHabitState extends State<NewHabit> {
             textCapitalization: TextCapitalization.sentences,
           ),
           const SizedBox(height: 16),
-          TextField(
-            controller: _amountController,
-            keyboardType: TextInputType.number,
-            decoration: const InputDecoration(
-              labelText: 'Target Count (Optional)',
-              border: OutlineInputBorder(),
-              prefixText: '',
-            ),
+          // === TASK 7 CHANGES START HERE ===
+          Row(
+            children: [
+              Expanded(
+                child: TextField(
+                  controller: _amountController,
+                  keyboardType: TextInputType.number,
+                  decoration: const InputDecoration(
+                    labelText: 'Target Count (Optional)',
+                    border: OutlineInputBorder(),
+                    prefixText: '',
+                  ),
+                ),
+              ),
+              const SizedBox(width: 8),
+              IconButton(
+                icon: const Icon(Icons.calendar_today),
+                onPressed: _openDatePicker,
+                tooltip: 'Pick Date',
+              ),
+            ],
           ),
+          const SizedBox(height: 8),
+          if (_selectedDate != null)
+            Text(
+              'Selected Date: ${formatter.format(_selectedDate!)}',
+              style: const TextStyle(fontWeight: FontWeight.bold),
+            ),
+          // === TASK 7 CHANGES END HERE ===
           const SizedBox(height: 16),
           DropdownButtonFormField<HabitFrequency>(
             value: _selectedFrequency,

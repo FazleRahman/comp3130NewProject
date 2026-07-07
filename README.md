@@ -141,7 +141,7 @@ Coded the showDatePicker in a custom function to enable the DatePicker and linke
 **Why:**  
 This follows the workshop instruction exactly (custom function for reusability and clarity). Makes date selection reliable and polished.
 
-### Update 2.9: [Week 6, Task 9]
+### Update 2.10: [Week 6, Task 9]
 This will however not print the value of the date when selected, edited code to capture that.
 - Passed `_selectedDate` to Habit constructor in `_submitHabit()`
 - Updated date display in form
@@ -149,3 +149,13 @@ This will however not print the value of the date when selected, edited code to 
 - Tested printing all values of new habit
 
 **Why:** Completes data capture for date selection.
+
+### Update 2.11: [Week 6, Advanced Tasks]
+1. Adding a dropdown to get values from the Category
+2. Saving the habit to the list and making a card appear on the screen for the new habit.
+- Added `HabitCategory` enum
+- Added Dropdown in NewHabit form
+- Updated model + saving + HabitList cards
+- Full integration and testing
+
+**Why:** Makes habits more organized.

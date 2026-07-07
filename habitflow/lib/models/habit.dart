@@ -5,6 +5,7 @@ import 'package:intl/intl.dart';
 const _uuid = Uuid();
 
 enum HabitFrequency { daily, weekly }
+enum HabitCategory { health, productivity, learning, other }
 
 final formatter = DateFormat('dd-MM-yyyy');
 
@@ -12,6 +13,7 @@ class Habit {
   final String id;
   final String name;
   final HabitFrequency frequency;
+  final HabitCategory category;
   final DateTime createdAt;
   final List<DateTime> completedDates; // To track history
 
@@ -20,6 +22,7 @@ class Habit {
     required this.frequency,
     DateTime? createdAt,
     List<DateTime>? completedDates,
+    this.category = HabitCategory.other,
   })  : id = _uuid.v4(),
         createdAt = createdAt ?? DateTime.now(),
         completedDates = completedDates ?? [];

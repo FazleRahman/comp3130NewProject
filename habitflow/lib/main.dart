@@ -30,13 +30,31 @@ class HabitsHome extends StatefulWidget {
 }
 
 class _HabitsHomeState extends State<HabitsHome> {
+  final List<Habit> _habits = [
+    Habit(
+      name: 'Drink Water',
+      frequency: HabitFrequency.daily,
+    ),
+    Habit(
+      name: 'Exercise 30 mins',
+      frequency: HabitFrequency.daily,
+    ),
+    Habit(
+      name: 'Read 20 pages',
+      frequency: HabitFrequency.daily,
+    ),
+    Habit(
+      name: 'Meditate',
+      frequency: HabitFrequency.daily,
+    ),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('HabitFlow'),
       ),
-      body: HabitList(habits: const []), // Placeholder for the habit list
+      body: HabitList(habits: _habits),
     );
   }
 }

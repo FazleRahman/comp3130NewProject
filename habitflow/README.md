@@ -63,3 +63,12 @@ Integrated `HabitList` widget into the main screen.
 
 **Why:**
 This allows to see the list UI immediately. I am following the workshop pattern of building UI components first, then connecting data later.
+
+### Update 1.4: [Week 5, Task 4]
+Hardcoded initial habits and connected them to the HabitList widget.
+- Added `_habits` list in `_HabitsHomeState` with 4 sample habits
+- Passed the list to `HabitList` widget
+- Removed placeholder text
+
+**Why:**
+This follows the exact pattern from the Travel Expenses workshop (hardcoding expenses before connecting state management). It lets us see real data on screen immediately, making development and testing easier.

@@ -33,12 +33,11 @@ jobs:
           FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
         run: |
           flutter pub global activate flutterfire_cli
-          flutterfire configure \
+          echo "y" | flutterfire configure \
             --project=$FIREBASE_PROJECT_ID \
             --token=$FIREBASE_TOKEN \
             --platforms=android \
-            --yes \
-            --non-interactive
+            --yes
           
       - name: Build APK
         working-directory: ./habitflow

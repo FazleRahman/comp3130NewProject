@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'models/habit.dart';
+import 'widgets/habit_list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,16 +36,7 @@ class _HabitsHomeState extends State<HabitsHome> {
       appBar: AppBar(
         title: const Text('HabitFlow'),
       ),
-      body: const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('HabitFlow'),
-            Text('Habit Tracker'),
-            Text('Habits List Placeholder'),
-          ],
-        ),
-      ),
+      body: HabitList(habits: const []), // Placeholder for the habit list
     );
   }
 }

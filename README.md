@@ -34,3 +34,12 @@ Added `uuid` dependency to `pubspec.yaml` and completed the `Habit` model.
 
 **Why:**
 UUID ensures each habit has a unique identifier (important for deletion and state management later). The model is designed to support streak tracking and completion history from the beginning.
+
+### Update 1.3: [Week 5, Task 3]
+Integrated `HabitList` widget into the main screen.
+- Added import for `habit_list.dart` in `main.dart`
+- Connected `HabitList` to the body of the Scaffold
+- Used an empty list as placeholder for now
+
+**Why:**
+This allows to see the list UI immediately. I am following the workshop pattern of building UI components first, then connecting data later.

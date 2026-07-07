@@ -16,8 +16,9 @@ class HabitList extends StatelessWidget {
       itemBuilder: (context, index) {
         final habit = habits[index];
         return Card(
-          margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 16),
+          margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
           child: ListTile(
+            leading: const Icon(Icons.check_circle_outline, color: Colors.teal),
             title: Text(
               habit.name,
               style: Theme.of(context).textTheme.bodyLarge,
@@ -25,7 +26,7 @@ class HabitList extends StatelessWidget {
             subtitle: Text(
               habit.frequency.toString().split('.').last.toUpperCase(),
             ),
-            trailing: const Icon(Icons.check_circle_outline),
+            trailing: const Icon(Icons.arrow_forward_ios, size: 18),
           ),
         );
       },

@@ -72,3 +72,12 @@ Hardcoded initial habits and connected them to the HabitList widget.
 
 **Why:**
 This follows the exact pattern from the Travel Expenses workshop (hardcoding expenses before connecting state management). It lets us see real data on screen immediately, making development and testing easier.
+
+### Update 1.5: [Week 5, Task 5]
+Improved HabitList UI with proper cards and printed habit names.
+- Updated `HabitList` to use `Card` + `ListTile` layout
+- Displayed habit name and frequency
+- Removed simple text placeholders
+
+**Why:**
+Moving from basic text display to nice cards. It makes the app look more professional and user-friendly, similar to how we created `expense_item.dart` in the Travel Expenses project.

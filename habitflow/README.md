@@ -214,3 +214,11 @@ Put in theme and Styled the application & Added full Light + Dark theme support.
 - Improved CardTheme for better alignment
 
 **Why:** Matches workshop theming requirements and improves UX.
+
+### Update 3.6: [Week 7, Final]
+Added simple progress chart for habits.
+- Basic bar chart showing completed days per habit
+- Integrated into main screen
+- Formatted such that chart is at top and cards are underneath (scrollable if many)
+
+**Why:** Wraps up the app with visual progress as per workshop.

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'models/habit.dart';
 import 'widgets/habit_list.dart';
 import 'widgets/new_habit.dart';
+import 'widgets/habit_chart.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,44 +29,29 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'HabitFlow',
       theme: ThemeData.light().copyWith(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.teal,
-          brightness: Brightness.light,
-        ),
-        cardTheme: const CardThemeData(
-          color: Colors.white,
-          elevation: 4,
-        ),
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.teal,
-          foregroundColor: Colors.white,
-        ),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
+        cardTheme: const CardThemeData(elevation: 4),
       ),
       darkTheme: ThemeData.dark().copyWith(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.grey,
-          brightness: Brightness.dark,
-        ),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.grey, brightness: Brightness.dark),
         scaffoldBackgroundColor: const Color(0xFF121212),
-        cardTheme: const CardThemeData(
-          color: Color(0xFF1E1E1E),
-          elevation: 4,
-        ),
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Color(0xFF1E1E1E),
-          foregroundColor: Colors.white,
-        ),
+        cardTheme: const CardThemeData(color: Color(0xFF1E1E1E), elevation: 4),
       ),
       themeMode: _isDarkMode ? ThemeMode.dark : ThemeMode.light,
-      home: HabitsHome(toggleTheme: _toggleTheme),
+      home: HabitsHome(toggleTheme: _toggleTheme, isDarkMode: _isDarkMode),
     );
   }
 }
 
 class HabitsHome extends StatefulWidget {
   final VoidCallback toggleTheme;
+  final bool isDarkMode;
 
-  const HabitsHome({super.key, required this.toggleTheme});
+  const HabitsHome({
+    super.key,
+    required this.toggleTheme,
+    required this.isDarkMode,
+  });
 
   @override
   State<HabitsHome> createState() => _HabitsHomeState();
@@ -105,7 +91,7 @@ class _HabitsHomeState extends State<HabitsHome> {
         title: const Text('HabitFlow'),
         actions: [
           IconButton(
-            icon: Icon(widget.toggleTheme == null ? Icons.dark_mode : Icons.light_mode), // Simplified
+            icon: Icon(widget.isDarkMode ? Icons.light_mode : Icons.dark_mode),
             onPressed: widget.toggleTheme,
             tooltip: 'Toggle Theme',
           ),
@@ -115,9 +101,16 @@ class _HabitsHomeState extends State<HabitsHome> {
           ),
         ],
       ),
-      body: HabitList(
-        habits: _habits,
-        onRemoveHabit: _removeHabit,
+      body: Column(
+        children: [
+          HabitChart(habits: _habits),
+          Expanded(
+            child: HabitList(
+              habits: _habits,
+              onRemoveHabit: _removeHabit,
+            ),
+          ),
+        ],
       ),
     );
   }

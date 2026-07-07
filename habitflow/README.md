@@ -307,3 +307,19 @@ Fixing up Test files
 - Test failures due to Firebase not initialized in test env → Used `setUpAll` and mock packages (`firebase_auth_mocks`)
 - Widget tree not finding "HabitFlow" → Added `pumpAndSettle` and robust finders
 - Navigation after login → Used `pushReplacement`
+
+___________________________X_____________________________
+### Update 7.1: [Week 11] 
+GitHub Actions CI for Flutter + Firebase
+- Added `.github/workflows/flutter.yml` for automated builds
+- Configured Firebase secrets in GitHub
+    -Firebase token: by running 'firebase login:ci' locally
+    -firebase broject id: from firebase console
+- went to github>repo settings> secrets and variables> actions> 'New Repository Secret
+- APK build on push/PR
+
+**Why:** Automates building and provides downloadable APK on GitHub.
+
+**Issues & Solutions:**
+- Firebase config in CI → Used `flutterfire configure` with secrets
+- Secrets management → Followed workshop notes for `FIREBASE_TOKEN`

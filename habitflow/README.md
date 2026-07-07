@@ -255,3 +255,10 @@ Updated widget_test.dart to test main app with Provider.
 - Basic smoke test for app launch
 
 **Why:** Follows workshop pattern for widget testing.
+
+### Update 5.2: [Week 9, Unit Tests]
+Added unit tests for HabitProvider (add/remove habits).
+- Created habit_provider_test.dart with multiple test cases
+- Tested initial state, add, and remove
+
+**Why:** Verifies core state management logic.

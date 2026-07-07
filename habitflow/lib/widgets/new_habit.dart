@@ -67,9 +67,9 @@ class _NewHabitState extends State<NewHabit> {
             controller: _amountController,
             keyboardType: TextInputType.number,
             decoration: const InputDecoration(
-              labelText: 'Target Amount (Optional)',
+              labelText: 'Target Count (Optional)',
               border: OutlineInputBorder(),
-              prefixText: '\$ ',
+              prefixText: '',
             ),
           ),
           const SizedBox(height: 16),

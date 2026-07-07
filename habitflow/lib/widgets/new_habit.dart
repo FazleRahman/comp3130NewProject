@@ -35,54 +35,66 @@ class _NewHabitState extends State<NewHabit> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          const Text(
-            'Add New Habit',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+Widget build(BuildContext context) {
+  return Padding(
+    padding: EdgeInsets.only(
+      left: 20,
+      right: 20,
+      top: 20,
+      bottom: MediaQuery.of(context).viewInsets.bottom + 20,
+    ),
+    child: Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        const Text(
+          'Add New Habit',
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
+        const SizedBox(height: 20),
+        TextField(
+          controller: _nameController,
+          decoration: const InputDecoration(
+            labelText: 'Habit Name',
+            border: OutlineInputBorder(),
           ),
-          const SizedBox(height: 20),
-          TextField(
-            controller: _nameController,
-            decoration: const InputDecoration(labelText: 'Habit Name'),
+          textCapitalization: TextCapitalization.sentences,
+        ),
+        const SizedBox(height: 16),
+        DropdownButtonFormField<HabitFrequency>(
+          value: _selectedFrequency,
+          decoration: const InputDecoration(
+            labelText: 'Frequency',
+            border: OutlineInputBorder(),
           ),
-          const SizedBox(height: 16),
-          DropdownButtonFormField<HabitFrequency>(
-            value: _selectedFrequency,
-            decoration: const InputDecoration(labelText: 'Frequency'),
-            items: HabitFrequency.values.map((freq) {
-              return DropdownMenuItem(
-                value: freq,
-                child: Text(freq.toString().split('.').last.toUpperCase()),
-              );
-            }).toList(),
-            onChanged: (value) {
-              if (value != null) {
-                setState(() => _selectedFrequency = value);
-              }
-            },
-          ),
-          const SizedBox(height: 24),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              TextButton(
-                onPressed: () => Navigator.pop(context),
-                child: const Text('Cancel'),
-              ),
-              const SizedBox(width: 12),
-              ElevatedButton(
-                onPressed: _submitHabit,
-                child: const Text('Add Habit'),
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
+          items: HabitFrequency.values.map((freq) {
+            return DropdownMenuItem(
+              value: freq,
+              child: Text(freq.toString().split('.').last.toUpperCase()),
+            );
+          }).toList(),
+          onChanged: (value) {
+            if (value != null) {
+              setState(() => _selectedFrequency = value);
+            }
+          },
+        ),
+        const SizedBox(height: 24),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('Cancel'),
+            ),
+            const SizedBox(width: 12),
+            ElevatedButton(
+              onPressed: _submitHabit,
+              child: const Text('Add Habit'),
+            ),
+          ],
+        ),
+      ],
+    ),
+  );
+}
 }

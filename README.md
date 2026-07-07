@@ -90,3 +90,13 @@ This makes the UI more informative and visually appealing, matching the workshop
 - Added AppBar titled "HabitFlow"
 - Included + IconButton that opens the New Habit modal
 - This was done when implementing the add habit functionality.
+
+### Update 2.4: [Week 6, task 4]
+Extended New Habit modal with proper form fields.
+- Added TextField for habit name
+- Added Dropdown for frequency selection
+- Added Save and Cancel buttons
+- Improved layout with padding and spacing
+
+**Why:**
+This makes the modal functional and user-friendly, following the workshop pattern of building a proper input form before adding more complex features.

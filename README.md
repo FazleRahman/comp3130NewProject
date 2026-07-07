@@ -61,3 +61,12 @@ Improved HabitList UI with proper cards and printed habit names.
 
 **Why:**
 Moving from basic text display to nice cards. It makes the app look more professional and user-friendly, similar to how we created `expense_item.dart` in the Travel Expenses project.
+
+### Update 1.6: [Week 5, Task 6]
+Added New Habit modal.
+- Created `new_habit.dart` with form (TextField + Dropdown for frequency)
+- Connected modal to + button
+- Added `_addHabit` method to state
+
+**Why:**
+This allows users to add habits dynamically, following the same pattern as the "Add Expense" modal in the Travel Expenses workshop.

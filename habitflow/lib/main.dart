@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'models/habit.dart';
 import 'widgets/habit_list.dart';
+import 'widgets/new_habit.dart';
 
 void main() {
   runApp(const MyApp());
@@ -48,11 +49,34 @@ class _HabitsHomeState extends State<HabitsHome> {
       frequency: HabitFrequency.daily,
     ),
   ];
+
+  void _openAddHabitOverlay() {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      builder: (ctx) => NewHabit(
+        onSaveHabit: _addHabit,
+      ),
+    );
+  }
+
+  void _addHabit(Habit habit) {
+    setState(() {
+      _habits.add(habit);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('HabitFlow'),
+        actions: [
+          IconButton(
+            onPressed: _openAddHabitOverlay,
+            icon: const Icon(Icons.add),
+          ),
+        ],
       ),
       body: HabitList(habits: _habits),
     );

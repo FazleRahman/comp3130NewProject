@@ -5,7 +5,6 @@ import 'package:intl/intl.dart';
 const _uuid = Uuid();
 
 enum HabitFrequency { daily, weekly }
-
 enum HabitCategory { health, productivity, learning, mindfulness, other }
 
 final formatter = DateFormat('dd-MM-yyyy');
@@ -37,5 +36,23 @@ class Habit {
       case HabitFrequency.weekly:
         return Icons.calendar_view_week;
     }
+  }
+
+  Habit markCompletedToday() {
+    final today = DateTime.now();
+    final alreadyCompletedToday = completedDates.any((date) =>
+        date.year == today.year &&
+        date.month == today.month &&
+        date.day == today.day);
+
+    if (alreadyCompletedToday) return this;
+
+    return Habit(
+      name: name,
+      frequency: frequency,
+      category: category,
+      createdAt: createdAt,
+      completedDates: [...completedDates, today],
+    );
   }
 }

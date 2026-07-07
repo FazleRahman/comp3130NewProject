@@ -222,3 +222,27 @@ Added simple progress chart for habits.
 - Formatted such that chart is at top and cards are underneath (scrollable if many)
 
 **Why:** Wraps up the app with visual progress as per workshop.
+
+_______________________________X__________________________________
+
+### Update 4.1: [Week 8] Added Provider Package + HabitProvider State Class
+- Ran `flutter pub add provider`
+- Created `lib/providers/habit_provider.dart` with `HabitProvider` class extending `ChangeNotifier`
+- Added methods: `addHabit`, `removeHabit`, `markCompletedToday`
+- Wrapped root app with `ChangeNotifierProvider`
+
+**Why:** Centralizes application state for habits (add/remove/update) as required in Week 8 workshop.
+
+### Update 4.2: [Week 8] Wrapped Main App with ChangeNotifierProvider + Updated Widgets
+- Updated `main.dart` to use Provider at root
+- Modified `HabitsHome`, `HabitList`, `NewHabit`, `HabitChart` to use `Provider.of` / `Consumer`
+- Integrated streak tracking with `markCompletedToday`
+
+**Why:** Allows widgets to access and modify shared state without prop drilling.
+
+### Update 4.3: [Week 8] Added Confirmation Dialog + Polish
+- Added delete confirmation dialog
+- Improved error handling and UI feedback
+- Tested full flow: add, mark done, delete
+
+**Why:** Improves UX as per workshop suggestions.

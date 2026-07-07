@@ -28,6 +28,7 @@ class _NewHabitState extends State<NewHabit> {
     final newHabit = Habit(
       name: _nameController.text.trim(),
       frequency: _selectedFrequency,
+      createdAt: _selectedDate,
     );
 
     widget.onSaveHabit(newHabit);
@@ -41,13 +42,12 @@ class _NewHabitState extends State<NewHabit> {
     super.dispose();
   }
 
-  // === TASK 8: Custom showDatePicker Function ===
   void _openDatePicker() async {
     final pickedDate = await showDatePicker(
       context: context,
       initialDate: _selectedDate ?? DateTime.now(),
       firstDate: DateTime(2020),
-      lastDate: DateTime.now().add(const Duration(days: 365)), // Allow future dates
+      lastDate: DateTime.now().add(const Duration(days: 365)),
       helpText: 'Select Habit Start / Target Date',
     );
 
@@ -57,7 +57,6 @@ class _NewHabitState extends State<NewHabit> {
       });
     }
   }
-  // === END TASK 8 ===
 
   @override
   Widget build(BuildContext context) {
@@ -101,7 +100,7 @@ class _NewHabitState extends State<NewHabit> {
               const SizedBox(width: 8),
               IconButton(
                 icon: const Icon(Icons.calendar_today),
-                onPressed: _openDatePicker,   // Linked here
+                onPressed: _openDatePicker,
                 tooltip: 'Pick Date',
               ),
             ],

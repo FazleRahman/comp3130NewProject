@@ -160,3 +160,12 @@ Coded the showDatePicker in a custom function to enable the DatePicker and linke
 
 **Why:**  
 This follows the workshop instruction exactly (custom function for reusability and clarity). Makes date selection reliable and polished.
+
+### Update 2.9: [Week 6, Task 9]
+This will however not print the value of the date when selected, edited code to capture that.
+- Passed `_selectedDate` to Habit constructor in `_submitHabit()`
+- Updated date display in form
+- Enhanced cards (in habit_list.dart) to show date
+- Tested printing all values of new habit
+
+**Why:** Completes data capture for date selection.

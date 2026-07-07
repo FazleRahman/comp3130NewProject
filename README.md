@@ -178,3 +178,11 @@ Added error handling for empty text entry using AlertDialog.
 - Prevents saving without name
 
 **Why:** Improves UX and matches workshop sample for invalid input handling.
+
+### Update 3.4: [Week 7, Task 4 & 5]
+Fixed HabitList call with onRemoveHabit callback + Dismissible support.
+- Added `_removeHabit` method
+- Passed `onRemoveHabit` to `HabitList`
+- Enabled swipe-to-delete with SnackBar
+
+**Why:** Completes the delete functionality without errors.

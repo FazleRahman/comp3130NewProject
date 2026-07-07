@@ -50,6 +50,18 @@ class _HabitsHomeState extends State<HabitsHome> {
     ),
   ];
 
+  void _addHabit(Habit habit) {
+     setState(() {
+       _habits.add(habit);
+     });
+   }
+
+  void _removeHabit(Habit habit) {
+    setState(() {
+      _habits.remove(habit);
+    });
+  }
+
   void _openAddHabitOverlay() {
     showModalBottomSheet(
       context: context,
@@ -60,11 +72,6 @@ class _HabitsHomeState extends State<HabitsHome> {
     );
   }
 
-  void _addHabit(Habit habit) {
-    setState(() {
-      _habits.add(habit);
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +85,14 @@ class _HabitsHomeState extends State<HabitsHome> {
           ),
         ],
       ),
-      body: HabitList(habits: _habits),
+      body: HabitList(
+        habits: _habits,
+        onRemoveHabit: _removeHabit,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _openAddHabitOverlay,
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }

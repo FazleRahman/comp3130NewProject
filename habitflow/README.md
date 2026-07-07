@@ -262,3 +262,37 @@ Added unit tests for HabitProvider (add/remove habits).
 - Tested initial state, add, and remove
 
 **Why:** Verifies core state management logic.
+
+_______________________________X__________________________________
+
+### Update 6.1: [Week 10] 
+Firebase Setup
+- Created Firebase project in console and enabled Email/Password Authentication
+- Ran `flutter pub add firebase_core firebase_auth`
+- Configured project with `flutterfire configure`
+- Added necessary imports and initialization in `main.dart`
+
+**Why:** Connects the app to Firebase backend for user authentication.
+
+### Update 6.2: [Week 10] 
+Login / Registration Screen
+- Created `lib/screens/login_screen.dart` with email/password fields
+- Implemented `_login()` and `_register()` methods using `FirebaseAuth`
+- Added basic form handling and error printing for debugging
+
+**Why:** Provides UI for users to register and log in as per workshop requirements.
+
+### Update 6.3: [Week 10] 
+Integration + Auth Flow
+- Updated `main.dart` to check auth state and route to Login or Home
+- Added StreamBuilder for real-time auth status
+- Protected main app behind authentication
+- Tested login/register flow
+
+**Why:** Completes authentication integration. Users must log in to access the habit tracker.
+
+### came across a lot of issues while putting forth the login screen;
+Mistakenly removed theme toggle button, had to bring it back again (repeated previous task)
+dependencies didn't match up, had to search them all separately and add them again.
+
+### And I removed the floating button for 'add habit' icon, and put it on the bottom left like it generally comes with flutter because that looked better. 

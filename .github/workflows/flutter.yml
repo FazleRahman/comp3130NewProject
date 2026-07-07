@@ -20,18 +20,21 @@ jobs:
           channel: 'stable'
 
       - name: Get Flutter dependencies
+        working-directory: ./habitflow   # ← Important: point to subfolder
         run: flutter pub get
 
       - name: Setup Firebase
+        working-directory: ./habitflow
         run: |
           flutter pub global activate flutterfire_cli
           flutterfire configure --project=$FIREBASE_PROJECT_ID --token=$FIREBASE_TOKEN --platforms=android --yes
 
       - name: Build APK
+        working-directory: ./habitflow
         run: flutter build apk --release
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: app-release
-          path: build/app/outputs/flutter-apk/app-release.apk
+          path: habitflow/build/app/outputs/flutter-apk/app-release.apk
